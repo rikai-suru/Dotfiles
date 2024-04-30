@@ -1,0 +1,38 @@
+// SCSS Variables
+// Colors
+$_color0:  #2a2840;
+$_color8:  #666684;
+
+$_color1:  #f7504b;
+$_color9:  #f47c7c;
+
+$_color2:  #9ec464;
+$_color10: #c8e899;
+
+$_color3:  #ff744d;
+$_color11: #fcb986;
+
+$_color4:  #b773f0;
+$_color12: #7f87f4;
+
+$_color5:  #f74fc1;
+$_color13: #f096ea;
+
+$_color6:  #648fc4;
+$_color14: #80b5f7;
+
+$_color7:  #908caa;
+$_color15: #c0c0ff;
+
+
+// Special
+$_background:  #2a2840;
+$_foreground:  #c0c0ff;
+$_cursor:      #c0c0ff;
+// Mine
+$_empty:       #565260;
+$_highlight:   $_color3;
+$_occupied:    $_color7;
+$_focus:       $_color14;
+$_hover:       $_color8;
+$_border:      #8a92fc;
