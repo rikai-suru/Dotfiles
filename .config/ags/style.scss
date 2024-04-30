@@ -1,0 +1,31 @@
+@use 'css/colors';
+
+// window stuff
+@use 'css/docked_bar';
+//@use 'css/player';
+//@use 'css/glance';
+//@use 'css/powermenu';
+//@use 'css/media';
+
+* {
+    all: initial;
+    font: {
+        family: IosevkaRikai Nerd Font;
+        size: 13px;
+        weight: bold;
+    }
+
+    label {
+        color: colors.$text;
+    }
+
+    image {
+        color: colors.$text;
+    }
+}
+
+tooltip label {
+    background-color: colors.$primary;
+    padding: 5px 15px;
+    border-radius: 20px;
+}

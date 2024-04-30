@@ -1,0 +1,23 @@
+import {BarWidget} from "./barWidget";
+
+const power_revealer = Widget.Revealer({
+    transition: "slide_left",
+    transitionDuration: 500,
+    child: Widget.Label("exit"),
+    css: "padding-left: 10px;", // add padding when shown
+});
+
+const BarPower = BarWidget({
+    class_name: "power",
+    eventbox: {
+        // on_primary_click: () => power_revealer.reveal_child = !power_revealer.reveal_child,
+        // on_secondary_click: () => WindowHandler.toggle_window("powermenu"),
+        on_primary_click: () => WindowHandler.toggle_window("powermenu"),
+        // on_hover: () => power_revealer.reveal_child = true,
+        // on_hover_lost: () => power_revealer.reveal_child = false,
+    },
+    box: {
+        // children: [Widget.Label({ label: "⏼", css: "padding-right: 5px" })],
+        children: [Widget.Label({ label: "󰢻", css: "padding-right: 5px" })],
+    },
+});

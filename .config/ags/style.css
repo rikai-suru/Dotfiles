@@ -1,0 +1,174 @@
+.bar {
+  background-color: #dce7f3;
+  color: #dce7f3;
+  margin: 0px 0px 0px 0px;
+  min-height: 23px;
+  border: 2px solid #525b8f;
+  border-top: 1px;
+  border-left: 1px;
+  border-right: 1px;
+}
+.bar .launcher {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .launcher:hover {
+  animation: 200ms fade-udw2y8m;
+}
+.bar .launcher:active {
+  animation: 200ms fade-udw2y8p;
+}
+.bar .workspaces {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .sysinfo {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .sysinfo:hover {
+  animation: 200ms fade-udw2y8y;
+}
+.bar .sysinfo:active {
+  animation: 200ms fade-udw2y9e;
+}
+.bar .systray {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .systray:hover {
+  animation: 200ms fade-udw2y9t;
+}
+.bar .systray:active {
+  animation: 200ms fade-udw2yam;
+}
+.bar .player {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .player:hover {
+  animation: 200ms fade-udw2yb5;
+}
+.bar .player:active {
+  animation: 200ms fade-udw2ybd;
+}
+.bar .info {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .info:hover {
+  animation: 200ms fade-udw2ybf;
+}
+.bar .info:active {
+  animation: 200ms fade-udw2yca;
+}
+.bar .media {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .media:hover {
+  animation: 200ms fade-udw2ycv;
+}
+.bar .media:active {
+  animation: 200ms fade-udw2yds;
+}
+.bar .power {
+  border-radius: 0px;
+  background-color: #dce7f3;
+}
+.bar .power:hover {
+  animation: 200ms fade-udw2yeg;
+}
+.bar .power:active {
+  animation: 200ms fade-udw2yf4;
+}
+.bar .workspaces .widget {
+  padding: 0px 20px 0px 17px;
+}
+.bar .workspaces .inactive:hover label {
+  animation: 200ms fade-udw2yfx;
+}
+.bar .workspaces > box > button > label {
+  min-width: 10px;
+}
+.bar .workspaces .active label {
+  color: #3487ed;
+}
+.bar .workspaces .empty label {
+  color: #a2a9ce;
+}
+.bar .workspaces .occupied label {
+  color: #525b8f;
+}
+.bar .sysinfo .widget {
+  padding: 2px 10px 2px 10px;
+}
+.bar .systray .widget {
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.bar .muted {
+  background-color: #dce7f3;
+}
+.bar .muted .widget {
+  padding: 2px 5px 2px 10px;
+}
+.bar .bluetooth {
+  background-color: #70b20c;
+}
+.bar .bluetooth .widget {
+  padding: 2px 10px 2px 10px;
+}
+.bar .info .widget {
+  padding: 2px 10px 2px 10px;
+}
+.bar .info .battery .glyph {
+  min-width: 1.3em;
+}
+.bar .info .connecting {
+  color: #f7504b;
+}
+.bar .info .unknown {
+  color: #dce7f3;
+}
+
+menu {
+  background-color: #dce7f3;
+  padding: 10px;
+  border-radius: 10px;
+}
+menu menuitem {
+  border-radius: 10px;
+}
+menu menuitem:hover {
+  animation: 200ms fade-udw2ygf;
+}
+menu menuitem label {
+  padding: 2px 8px;
+}
+
+menubar menuitem {
+  padding: 4px;
+}
+
+* {
+  all: initial;
+  font-family: IosevkaRikai Nerd Font;
+  font-size: 13px;
+  font-weight: bold;
+}
+* label {
+  color: #525b8f;
+}
+* image {
+  color: #525b8f;
+}
+
+tooltip label {
+  background-color: #7b82aa;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

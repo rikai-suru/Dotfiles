@@ -1,0 +1,132 @@
+@use "sass:list";
+@use 'animations';
+@use 'colors';
+
+.bar {
+	margin: 4px 4px 4px 4px;
+	min-height: 25px;
+
+	$all-modules: "launcher", "workspaces", "sysinfo", "systray", "player", "info", "media", "power";
+	@each $modules in $all-modules {
+
+		.#{$modules} {
+			@if not list.index("workspaces", $modules) {
+				@include animations.fade("&:hover", colors.$background, colors.$hover);
+				@include animations.fade("&:active", colors.$hover, colors.$background);
+			}
+			border-radius: 5px;
+			background-color: colors.$background;
+
+			.widget {
+				// up right down left
+				// padding: 0px 14px;
+				// padding: 4px 15px 4px 13px;
+			}
+		}
+	}
+
+	.workspaces {
+		border: 2px solid rgba(colors.$border, 0.78);
+		border-radius: 5px;
+		.widget {
+			padding: 0px 20px 0px 17px;
+		}
+		@include animations.fade(".inactive:hover label", colors.$foreground, colors.$hover, $property: "color");
+
+		& > box > button > label {
+			//min-width: 10px;
+			//color: colors.$background;
+		}
+
+		.active label {
+			color: colors.$focus;
+		}
+
+		.empty label {
+			color: colors.$empty;
+		}
+
+		.occupied label {
+			 color: colors.$occupied;
+		}
+	}
+
+	.sysinfo {
+		border: 2px solid rgba(colors.$border, 0.78);
+		border-radius: 5px;
+		.widget {
+			padding: 2px 10px 2px 10px;
+		}
+	}
+
+	.systray {
+		border: 2px solid rgba(colors.$border, 0.78);
+		border-radius: 5px;
+
+		.widget {
+			padding: 0px { left: 10px; right: 10px; };
+		}
+	}
+
+	// media
+	.muted {
+		border: 2px solid rgba(colors.$border, 0.78);
+		border-radius: 5px;
+		background-color: colors.$bad;
+		.widget {
+			padding: 2px 5px 2px 10px;
+		}
+	}
+	.bluetooth {
+		border: 2px solid rgba(colors.$border, 0.78);
+		border-radius: 5px;
+		background-color: colors.$bluetooth;
+		.widget {
+			padding: 2px 10px 2px 10px;
+		}
+	}
+
+	.info {
+		border: 2px solid rgba(colors.$border, 0.78);
+		border-radius: 5px;
+		.widget {
+			padding: 2px 10px 2px 10px;
+		}
+
+		.battery .glyph {
+			min-width: 1.3em;
+		}
+
+		.connecting {
+			color: colors.$warning;
+		}
+		.unknown {
+			color: colors.$bad;
+		}
+	}
+}
+
+// i have no idea which scope TrayItem stays under
+menu {
+	border: 2px solid rgba(colors.$border, 0.78);
+		// border-radius: 5px;
+
+	background-color: colors.$background;
+	padding: 10px;
+	border-radius: 5px;
+
+	menuitem {
+		@include animations.fade("&:hover", colors.$background, colors.$hover);
+		border-radius: 5px;
+		label {
+			padding: 2px 8px;
+		}
+	}
+}
+
+menubar {
+	menuitem {
+		padding: 4px;
+	}
+}
+

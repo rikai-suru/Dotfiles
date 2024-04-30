@@ -1,0 +1,154 @@
+// const BarPlayer = BarWidget({
+//     class_name: "player",
+//     eventbox: {
+//         visible: Variables.PlayerSelected.bind().transform(selected => <number>selected >= 0),
+//         on_primary_click: () => WindowHandler.toggle_window("player"),
+//         on_secondary_click: () => {
+//             if (Mpris.players[Variables.PlayerSelected.value]?.can_go_next)
+//                 Mpris.players[Variables.PlayerSelected.value].next();
+//         },
+//         on_middle_click: () => {
+//             if (Mpris.players[Variables.PlayerSelected.value]?.can_play)
+//                 Mpris.players[Variables.PlayerSelected.value].playPause();
+//         },
+//     },
+//     box: {
+//         spacing: 20,
+//         setup: widget => {
+//             widget.hook(Mpris, widget => {
+//                 if (Variables.PlayerSelected.value < 0)
+//                     return;
+//
+//                 const player = Mpris.players[Variables.PlayerSelected.value];
+//                 const title = player.track_title;
+//                 const artists = player.track_artists;
+//
+//                 widget.visible = !(title.length || artists.join("").length);
+//
+//                 // display string
+//                 let player_string = title;
+//                 if (artists.length > 0 && artists[0].length > 0)
+//                     player_string = `${truncate(artists[0], 30)} - ${truncate(title, 30)}`;
+//
+//                 widget.children = [
+//                     Widget.Label(get_player_glyph(player.name)),
+//                     Widget.Label(player_string),
+//                 ];
+//             }, "player-changed");
+//         },
+//     },
+// });
+
+
+// const BarMedia = BarWidget({
+//     class_name: "media",
+//     eventbox: {
+//         setup: widget => {
+//             widget.hook(Bluetooth, widget => {
+//                 let connected = false;
+//                 Bluetooth.devices.forEach(
+//                     element => connected ||= element.connected,
+//                 );
+//
+//                 connected
+//                     ? widget.get_style_context().add_class("bluetooth")
+//                     : widget.get_style_context().remove_class("bluetooth");
+//             });
+//
+//             widget.hook(Audio, widget => {
+//                 Audio.speaker?.is_muted
+//                     ? widget.get_style_context().add_class("muted")
+//                     : widget.get_style_context().remove_class("muted");
+//             }, "speaker-changed");
+//         },
+//         // on_secondary_click: () => WindowHandler.toggle_window("media"),
+//     },
+//     box: {
+//         spacing: 10,
+//         children: [
+//             Widget.EventBox({
+//                 on_scroll_up: () => {
+//                     const speaker = Audio.speaker;
+//                     if (speaker)
+//                         speaker.volume += 0.1;
+//                 },
+//                 on_scroll_down: () => {
+//                     const speaker = Audio.speaker;
+//                     if (speaker)
+//                         speaker.volume -= 0.1;
+//                 },
+//                 on_middle_click: () => {
+//                     const speaker = Audio.speaker;
+//                     if (speaker)
+//                         speaker.is_muted = !speaker.is_muted;
+//                 },
+//                 child: Widget.Box({
+//                     class_name: "sink",
+//                     spacing: 6,
+//                     children: [
+//                         Widget.Label().hook(Audio, widget => {
+//                             if (!Audio.speaker)
+//                                 widget.label = "󰖁 ";
+//                             else if (Audio.speaker.is_muted)
+//                                 widget.label = "󰝟 ";
+//                             else if (Audio.speaker.stream?.port === "headphone-output"
+//                                   || Audio.speaker.stream?.port === "analog-output-headphones")
+//                                 widget.label = " ";
+//                             else
+//                                 widget.label = symbolic_strength({
+//                                     value: Audio.speaker.volume,
+//                                     max: 1,
+//                                     array: ["󰖀 ", "󰕾 "],
+//                                 });
+//                         }, "speaker-changed"),
+//
+//                         Widget.Label().hook(Audio, widget => {
+//                             if (!Audio.speaker)
+//                                 return;
+//
+//                             widget.label = `${Math.ceil(Audio.speaker.volume * 100)}%`;
+//                             widget.visible = !(Audio.speaker.is_muted);
+//                         }, "speaker-changed"),
+//                     ],
+//                 }),
+//             }),
+//             Widget.EventBox({
+//                 on_scroll_up: () => {
+//                     const microphone = Audio.microphone;
+//                     if (microphone)
+//                         microphone.volume += 0.100;
+//                 },
+//                 on_scroll_down: () => {
+//                     const microphone = Audio.microphone;
+//                     if (microphone)
+//                         microphone.volume -= 0.100;
+//                 },
+//                 on_middle_click: () => {
+//                     const microphone = Audio.microphone;
+//                     if (microphone)
+//                         microphone.is_muted = !microphone.is_muted;
+//                 },
+//                 child: Widget.Box({
+//                     class_name: "source",
+//                     spacing: 1,
+//                     children: [
+//                         Widget.Label().hook(Audio, widget => {
+//                             if (!Audio.microphone || Audio.microphone.is_muted)
+//                                 widget.label = " ";
+//                             else
+//                                 widget.label = " ";
+//                         }, "microphone-changed"),
+//
+//                         Widget.Label().hook(Audio, widget => {
+//                             if (!Audio.microphone)
+//                                 return;
+//
+//                             widget.label = `${Math.ceil(Audio.microphone.volume * 100)}%`;
+//                             widget.visible = !(Audio.microphone.is_muted);
+//                         }, "microphone-changed"),
+//                     ],
+//                 }),
+//             }),
+//         ],
+//     },
+// });
